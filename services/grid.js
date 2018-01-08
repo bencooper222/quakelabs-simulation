@@ -5,6 +5,7 @@ const CellWrapper = require("./wrappers/cell.js");
 const GridWrapper = require("./wrappers/grid.js");
 const config = require("../config.js");
 const querying = require("./querying.js");
+const rnorm = require('randgen').rnorm;
 
 // a grid represents the city - a combination of cells
 
@@ -17,10 +18,10 @@ function Grid(xSize, ySize) {
   this._cells = createCells.call(this); // call() ensures that it has the right "this"
   //console.log(this.cells);
 
-  this.food = 50;
-  this.water = 50;
-  this.shelter = 50;
-  this.wellness = 50;
+  this.food = rnorm(50,6);
+  this.water =rnorm(50,6);
+  this.shelter = rnorm(50,6);
+  this.wellness = rnorm(50,6);
 }
 
 // function to move grid simulation forward. Defaults to 1 tick forward but can do a different number if needed

@@ -91,7 +91,6 @@ app.post("/quake", (req, res) => {
 
   let quake = quakes[req.query.quakeId];
   let grid = grids[req.query.id];
-  
 
   if (quake != null && grid != null) {
     try {

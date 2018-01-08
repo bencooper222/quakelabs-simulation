@@ -56,6 +56,13 @@ Grid.prototype.quake = function(
   });
 };
 
+Grid.prototype.changeProperty = function(property,newVal){
+  
+    this[property] = newVal;
+  
+  
+}
+
 // you could directly access with Grid._cells but this has error protection
 Grid.prototype.at = function(x, y, direction = "none") {
   if (x < 0 || x > this.xSize - 1) {

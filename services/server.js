@@ -95,11 +95,38 @@ app.post("/quake", (req, res) => {
   if (quake != null && grid != null) {
     try {
       grid.quake(quake.where, quake.magnitude);
-      res.status(200).send('Success!');
+      res.status(200).send("Success!");
     } catch (err) {
       console.log(err);
-      res.status(500).send('Quake probably didn not occur');
+      res.status(500).send("Quake probably didn not occur");
     }
+  } else {
+    res.status(500).send("Quake probably didn not occur");
+  }
+});
+
+app.post("/change", (req, res) => {
+  console.log(
+    req.route.path +
+      " pinged with POST " +
+      JSON.stringify(req.query) +
+      " query string"
+  );
+
+  let property = req.query.property;
+  let grid = grids[req.query.id];
+  console.log(grid[property]);
+
+  if (grid != null && grid[property] != null && !isNaN(req.query.value)) {
+    try {
+      grid.changeProperty(property, req.query.value);
+      res.status(200).send(property + ": " + req.query.value);
+    } catch (err) {
+      console.log(err);
+      res.status(500).send("Property change probably didn not occur");
+    }
+  } else {
+    res.status(500).send("Property change probably didn not occur");
   }
 });
 

@@ -93,7 +93,7 @@ module.exports = {
         magnitude: 4,
         where: {
             100: [
-                [14, 8]
+                [9, 8]
             ],
             80: [
                 [8, 9],

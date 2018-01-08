@@ -53,6 +53,18 @@ exp.population.distribution = function(grid) {
   }
 };
 
+exp.population.setResilience = function(grid){
+  let vals = new Array(new Array());
+ 
+
+
+  for (let x = 0; x < grid.xSize; x++) {
+    for (let y = 0; y < grid.ySize; y++) {
+      grid.at(x,y).changePopResilience(rnorm(40,8));
+    }
+  }
+}
+
 exp.property = {};
 
 exp.property.value = exp.population.value * 4234; // 4234 is average value/capita
@@ -87,6 +99,7 @@ exp.setup = function(grid) {
     let rtn = grid || new Grid(exp.dimensions.x, exp.dimensions.y);
     exp.population.distribution(rtn);
     exp.property.distribution(rtn);
+    exp.population.setResilience(rtn)
 
     resolve(rtn);
   });

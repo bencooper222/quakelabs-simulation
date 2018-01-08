@@ -60,6 +60,10 @@ Cell.prototype.changePopulation = function(newPopulation) {
   this.population.originalValue = newPopulation;
 };
 
+Cell.prototype.changePopResilience = function(newResilience){
+  this.population.resiliency = newResilience;
+}
+
 Cell.prototype.changePopulationGrowth = function(newGrowth) {
   this.population.growthPerTick = newGrowth;
 };

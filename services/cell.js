@@ -78,11 +78,11 @@ Cell.prototype.tick = function(growthPerTickAlterationValue) {
   this.population.growthPerTick *=
     growthPerTickAlterationValue * Math.pow(this.population.resiliency/1.1, 0.25);
     if(this.population.growthPerTick>1.02){
-      this.population.growthPerTick = rnorm(.99,.13)
+      this.population.growthPerTick = rnorm(1.0000000001,.03)
     }
 
     if(this.population.growthPerTick<.6){
-      this.population.growthPerTick = rnorm(rnorm(.72,.1),.13)
+      this.population.growthPerTick = rnorm(rnorm(.97,.1),.13)
     }
   this.population.originalValue *= this.population.growthPerTick; // grow! (or die...)
 };

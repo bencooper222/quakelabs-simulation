@@ -60,7 +60,7 @@ exp.population.setResilience = function(grid){
 
   for (let x = 0; x < grid.xSize; x++) {
     for (let y = 0; y < grid.ySize; y++) {
-      grid.at(x,y).changePopResilience(rnorm(40,8));
+      grid.at(x,y).changePopResilience(rnorm(40,10));
     }
   }
 }

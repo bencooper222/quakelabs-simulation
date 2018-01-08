@@ -10,7 +10,7 @@ let exp = module.exports;
 
 exp.tick = {};
 
-exp.tick.realFrequency = 10; // seconds
+exp.tick.realFrequency = 1; // seconds
 exp.tick.fakeFrequency = 1080; // seconds
 exp.tick.limit = 560;
 // this works out to 56 minutes representing 7 days

@@ -18,10 +18,10 @@ function Grid(xSize, ySize) {
   this._cells = createCells.call(this); // call() ensures that it has the right "this"
   //console.log(this.cells);
 
-  this.food = rnorm(50,6);
-  this.water =rnorm(50,6);
-  this.shelter = rnorm(50,6);
-  this.wellness = rnorm(50,6);
+  this.food = 15;
+  this.water =15;
+  this.shelter = 15;
+  this.wellness = 15;
 }
 
 // function to move grid simulation forward. Defaults to 1 tick forward but can do a different number if needed

@@ -1,6 +1,7 @@
 //@ts-check
 
 const Promise = require("bluebird");
+const rnorm = require('randgen').rnorm;
 // the cells that composes the Grid
 function Cell(x, y, grid, options = {}) {
   this.x = x;
@@ -73,8 +74,16 @@ Cell.prototype.changePropertyOriginalValue = function(newValue) {
 };
 
 Cell.prototype.tick = function(growthPerTickAlterationValue) {
+  console.log(growthPerTickAlterationValue,this.population.growthPerTick);
   this.population.growthPerTick *=
-    growthPerTickAlterationValue * Math.pow(this.population.resiliency, 0.25);
+    growthPerTickAlterationValue * Math.pow(this.population.resiliency/1.1, 0.25);
+    if(this.population.growthPerTick>1.02){
+      this.population.growthPerTick = rnorm(.99,.13)
+    }
+
+    if(this.population.growthPerTick<.6){
+      this.population.growthPerTick = rnorm(rnorm(.72,.1),.13)
+    }
   this.population.originalValue *= this.population.growthPerTick; // grow! (or die...)
 };
 

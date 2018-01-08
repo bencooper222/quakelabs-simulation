@@ -27,8 +27,6 @@ config.setup().then(grid => {
     grid.tick();
   }, config.tick.realFrequency * 1000);
 
-  setTimeout(()=>{
-      //grid.quake()
-  })
+
   server("two", grid);
 });

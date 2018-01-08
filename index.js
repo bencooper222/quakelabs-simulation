@@ -13,13 +13,14 @@ const querying = require('./services/querying.js');
 
 config.setup().then(grid => {
   //console.log(grid.at(2, 3).navigate("N"));
- /* querying.rectangular(grid,[4,5],[2,3]).map(function(element){
-    console.log(element.x,element.y);
-  }); */
+  setInterval(() => {
+    grid.tick();
+  }, config.tick.realFrequency * 1000);
 
-  grid.evacuate([[2,3],[4,5]],[[3,7],[4,10]],60);
+
   server("one", grid);
 });
+
 
 config.setup().then(grid => {
   //console.log(grid.at(2, 3).navigate("N"));
@@ -29,4 +30,34 @@ config.setup().then(grid => {
 
 
   server("two", grid);
+});
+
+config.setup().then(grid => {
+  //console.log(grid.at(2, 3).navigate("N"));
+  setInterval(() => {
+    grid.tick();
+  }, config.tick.realFrequency * 1000);
+
+
+  server("three", grid);
+});
+
+config.setup().then(grid => {
+  //console.log(grid.at(2, 3).navigate("N"));
+  setInterval(() => {
+    grid.tick();
+  }, config.tick.realFrequency * 1000);
+
+
+  server("four", grid);
+});
+
+config.setup().then(grid => {
+  //console.log(grid.at(2, 3).navigate("N"));
+  setInterval(() => {
+    grid.tick();
+  }, config.tick.realFrequency * 1000);
+
+
+  server("five", grid);
 });

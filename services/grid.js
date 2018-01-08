@@ -28,7 +28,7 @@ function Grid(xSize, ySize) {
 // probably won't be deterministic so _be_ careful.
 Grid.prototype.tick = function(num = 1) {
   //console.log(this);
-  if(this.fakeTime === 604800-38020) console.log('FINIT BITCHES');
+  if(this.fakeTime === 604800-47900) console.log('FINIT BITCHES');
   this.realTime += config.tick.realFrequency;
   this.fakeTime += config.tick.fakeFrequency;
   this._cells.forEach(row => {

@@ -82,6 +82,7 @@ Cell.prototype.tick = function(growthPerTickAlterationValue) {
     }
 
     if(this.population.growthPerTick<.6){
+      let thing = .94 + growthPerTickAlterationValue *.06;
       this.population.growthPerTick = rnorm(rnorm(.97,.1),.13)
     }
   this.population.originalValue *= this.population.growthPerTick; // grow! (or die...)
